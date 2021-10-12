@@ -41,7 +41,7 @@ if(ip !== ip_address && ipAddressesMap[ip] < ipAddressesMap[ip_address]){
 /**
  * @returns top 100 array
 */
-const top_hundered = () => topHundred;
+const top_hundred = () => topHundred;
 
 /**
  * Clears the ip addresses map
