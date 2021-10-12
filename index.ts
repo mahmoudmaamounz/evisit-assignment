@@ -16,6 +16,11 @@ const request_handled = (ip_address): void => {
 if(!ip_address){
 throw new Error('BAD_IP_ADDRESS');
 }
+
+// If its not in the top 100 and the top hundered is not filled yet then add it 
+if(topHundred.length < 100 && topHundred.indexOf(ip_address) !== -1){
+    topHundred.push(ip_address);
+}
  
 topHundred.forEach((ip, index)=>{
 
