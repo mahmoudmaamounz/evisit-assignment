@@ -11,15 +11,26 @@ let ipAddressesMap = {};
  * @param ip_address ip address 
  * @returns void
 */
-// Time complexity nLogn 
 const request_handled = (ip_address): void => {
 
 if(!ip_address){
 throw new Error('BAD_IP_ADDRESS');
 }
+ 
+topHundred.forEach((ip, index)=>{
+
+if(ip !== ip_address && ipAddressesMap[ip] < ipAddressesMap[ip_address]){
+
+    // If its already in the top one hundred array then remove it
+    if(topHundred.indexOf(ip_address) !== -1){
+        topHundred.splice(index, 1);
+    }
+
+    // Add the ip to the top one hundred
+    topHundred.splice(index, 0, ip_address);
+}
+});
     
-// Time complexity nLogn 
-mergeSort(topHundred, ipAddressesMap);
 }
 
 /**
